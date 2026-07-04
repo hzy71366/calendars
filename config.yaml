@@ -4,8 +4,7 @@
 
 config_version: 1
 
-# --- 日历元信息 ---
-calendar_name: "我的日历"
+# --- 全局设置 ---
 timezone: "Asia/Shanghai"
 language: "zh-CN"
 
@@ -28,6 +27,7 @@ categories:
 # 每个日历可独立设置提醒
 calendars:
   liuzhai:
+    name: "六斋日"
     enabled: true
     emoji: "📿"
     alarm:
@@ -35,6 +35,7 @@ calendars:
       days_before: 0
       time: "06:00"
   shizhai:
+    name: "十斋日"
     enabled: true
     emoji: "🪷"
     alarm:
