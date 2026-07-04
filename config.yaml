@@ -8,10 +8,6 @@ config_version: 1
 timezone: "Asia/Shanghai"
 language: "zh-CN"
 
-# --- 事件模板 ---
-event_title: "{emoji} {name} · {lunar}"
-event_description: "{lunar}\n六斋日，过午不食，持斋修行，诸恶莫作，众善奉行。"
-
 # --- 分类标签 ---
 categories:
   - "佛教"
