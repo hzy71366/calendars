@@ -43,6 +43,7 @@ jobs:
       - name: 部署到 GitHub Pages
         run: |
           cd docs
+          touch .nojekyll
           git init
           git config user.name "github-actions"
           git config user.email "actions@github.com"
