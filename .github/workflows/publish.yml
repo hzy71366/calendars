@@ -1,4 +1,4 @@
-name: 发布 ICS 日历
+name: 更新 ICS 日历
 
 on:
   schedule:
@@ -11,15 +11,8 @@ on:
       - "scripts/**"
     branches: [main]
 
-permissions:
-  contents: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -40,13 +33,10 @@ jobs:
       - name: 生成 ICS 文件
         run: python scripts/generate_ics.py
 
-      - name: 部署到 GitHub Pages
+      - name: 提交并推送更新
         run: |
-          cd docs
-          touch .nojekyll
-          git init
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add .
-          git commit -m "deploy: $(date +%Y-%m-%d)"
-          git push --force --quiet "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:gh-pages
+          git add docs/
+          git diff --quiet --cached || git commit -m "chore: auto-update ICS [skip ci]"
+          git push
