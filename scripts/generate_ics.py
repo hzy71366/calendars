@@ -33,9 +33,9 @@ def main():
     args = parser.parse_args()
 
     # 加载配置
-    from calendar_engine.config import load_config
-    from calendar_engine.generator import generate_all
-    from calendar_engine.registry import CALENDAR_REGISTRY
+    from calendar_engine.core.config import load_config
+    from calendar_engine.core.generator import generate_all
+    from calendar_engine.core.registry import CALENDAR_REGISTRY
 
     config_text = open(args.config, "r", encoding="utf-8").read()
     cfg = load_config(config_text)

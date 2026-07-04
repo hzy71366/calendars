@@ -1,3 +1,1 @@
-"""Calendar Engine — 版本信息。"""
-
-__version__ = "1.0.0"
+"""Calendar Engine — 多日历 ICS 生成引擎。"""

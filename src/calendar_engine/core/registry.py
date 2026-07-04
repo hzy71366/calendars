@@ -5,7 +5,7 @@
 from __future__ import annotations
 
 import datetime
-from calendar_engine.types import CalendarType
+from calendar_engine.core.types import CalendarType
 
 
 def _make_lunar_description(solar_date: datetime.date) -> str:

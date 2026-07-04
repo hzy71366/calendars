@@ -13,7 +13,7 @@ NOTE: 农历→公历转换均由 lunar-python 动态计算。
 import datetime
 import pytest
 from lunar_python import Lunar
-from liuzhai_ics.zhai_types import is_liuzhai_day
+from calendar_engine.calendars.liuzhai import is_liuzhai_day
 
 
 # ──────────────────────────────────────────────

@@ -2,8 +2,8 @@
 
 import datetime
 import pytest
-from calendar_engine.types import CalendarType
-from calendar_engine.registry import CALENDAR_REGISTRY, get_calendar_type
+from calendar_engine.core.types import CalendarType
+from calendar_engine.core.registry import CALENDAR_REGISTRY, get_calendar_type
 
 
 class TestCalendarType:

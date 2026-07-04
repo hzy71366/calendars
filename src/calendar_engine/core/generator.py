@@ -8,8 +8,8 @@ hardcoded knowledge of any specific calendar.
 import datetime
 from pathlib import Path
 from icalendar import Calendar, Event, Alarm
-from calendar_engine.config import AppConfig
-from calendar_engine.registry import CALENDAR_REGISTRY, CalendarType
+from calendar_engine.core.config import AppConfig
+from calendar_engine.core.registry import CALENDAR_REGISTRY, CalendarType
 
 
 _UID_DOMAIN = "liuzhai-ics"
