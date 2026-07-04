@@ -17,7 +17,7 @@ categories:
 calendars:
   liuzhai:
     name: "六斋日"
-    description: "测试1"
+    description: ""
     enabled: true
     emoji: "📿"
     alarm:
@@ -26,7 +26,7 @@ calendars:
       time: "06:00"
   shizhai:
     name: "十斋日"
-    description: "测试2"
+    description: ""
     enabled: true
     emoji: "🪷"
     alarm:
