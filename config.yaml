@@ -12,12 +12,6 @@ language: "zh-CN"
 event_title: "{emoji} {name} · {lunar}"
 event_description: "{lunar}\n六斋日，过午不食，持斋修行，诸恶莫作，众善奉行。"
 
-# --- 全局提醒（日历未指定自己的提醒时使用）---
-alarm:
-  enabled: true
-  days_before: 1
-  time: "18:00"
-
 # --- 分类标签 ---
 categories:
   - "佛教"
@@ -31,7 +25,7 @@ calendars:
     enabled: true
     emoji: "📿"
     alarm:
-      enabled: false
+      enabled: true
       days_before: 0
       time: "06:00"
   shizhai:
@@ -39,7 +33,7 @@ calendars:
     enabled: true
     emoji: "🪷"
     alarm:
-      enabled: false
+      enabled: true
       days_before: 0
       time: "06:00"
 
