@@ -27,7 +27,7 @@ categories:
 # 每个日历可独立设置提醒
 calendars:
   liuzhai:
-    name: "佛教六斋日"
+    name: "六斋日"
     enabled: true
     emoji: "📿"
     alarm:
