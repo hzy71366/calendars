@@ -9,6 +9,11 @@ from liuzhai_ics.generator import (
     _make_lunar_description,
     _make_uid,
 )
+from liuzhai_ics.config import AppConfig
+
+
+_DEFAULT_CONFIG = AppConfig()
+"""默认配置用于测试"""
 
 
 # 每个农历月恰好6天，一年12~13个月，太阳年约72~78天
@@ -85,7 +90,7 @@ class TestICSCompliance:
     def calendar(self):
         """生成2026~2027年ICS供测试"""
         dates = collect_liuzhai_dates(2026, 2027)
-        return build_liuzhai_calendar(dates)
+        return build_liuzhai_calendar(dates, _DEFAULT_CONFIG)
 
     @pytest.fixture
     def events(self, calendar):
@@ -169,7 +174,7 @@ class TestRoundTrip:
     def test_round_trip_preserves_count(self):
         """序列化后重新解析，事件数不变"""
         dates = collect_liuzhai_dates(2026, 2026)
-        cal = build_liuzhai_calendar(dates)
+        cal = build_liuzhai_calendar(dates, _DEFAULT_CONFIG)
         ics_bytes = cal.to_ical()
 
         parsed = Calendar.from_ical(ics_bytes)
@@ -179,7 +184,7 @@ class TestRoundTrip:
     def test_round_trip_preserves_uids(self):
         """序列化后重新解析，UID不变"""
         dates = collect_liuzhai_dates(2026, 2026)
-        cal = build_liuzhai_calendar(dates)
+        cal = build_liuzhai_calendar(dates, _DEFAULT_CONFIG)
         ics_bytes = cal.to_ical()
 
         parsed = Calendar.from_ical(ics_bytes)
@@ -190,7 +195,7 @@ class TestRoundTrip:
     def test_round_trip_preserves_dates(self):
         """序列化后重新解析，日期不变"""
         dates = collect_liuzhai_dates(2026, 2026)
-        cal = build_liuzhai_calendar(dates)
+        cal = build_liuzhai_calendar(dates, _DEFAULT_CONFIG)
         ics_bytes = cal.to_ical()
 
         parsed = Calendar.from_ical(ics_bytes)
@@ -203,7 +208,7 @@ class TestRoundTrip:
     def test_ics_byte_order(self):
         """to_ical() 返回合法 ICS"""
         dates = collect_liuzhai_dates(2026, 2026)
-        cal = build_liuzhai_calendar(dates)
+        cal = build_liuzhai_calendar(dates, _DEFAULT_CONFIG)
         ics_bytes = cal.to_ical()
         assert isinstance(ics_bytes, bytes)
         assert len(ics_bytes) > 0
