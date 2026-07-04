@@ -5,7 +5,7 @@
 config_version: 1
 
 # --- 日历元信息 ---
-calendar_name: "六斋日"
+calendar_name: "我的日历"
 timezone: "Asia/Shanghai"
 language: "zh-CN"
 
