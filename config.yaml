@@ -19,9 +19,6 @@ alarm:
   days_before: 1
   time: "09:00"
 
-# --- 图标 ---
-emoji: "🔴"
-
 # --- 分类标签 ---
 categories:
   - "佛教"
@@ -32,12 +29,14 @@ categories:
 calendars:
   liuzhai:
     enabled: true
+    emoji: "📿"
     alarm:
       enabled: true
       days_before: 1
       time: "09:00"
   shizhai:
     enabled: true
+    emoji: "🪷"
     alarm:
       enabled: true
       days_before: 0
