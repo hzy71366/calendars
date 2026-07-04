@@ -21,11 +21,15 @@ def _make_lunar_description(solar_date: datetime.date) -> str:
 
 
 def _is_liuzhai(solar_date: datetime.date) -> bool:
-    """六斋日判定（与 zhai_types.py 逻辑一致）"""
-    import datetime as dt
+    """六斋日判定"""
     import calendar_engine.calendars.liuzhai as lz
-
     return lz.is_liuzhai_day(solar_date)
+
+
+def _is_shizhai(solar_date: datetime.date) -> bool:
+    """十斋日判定"""
+    import calendar_engine.calendars.shizhai as sz
+    return sz.is_observance(solar_date)
 
 
 # ── 注册表 ──────────────────────────────────
@@ -40,16 +44,19 @@ CALENDAR_REGISTRY: dict[str, CalendarType] = {
         emoji="🔴",
         categories=("佛教", "斋日"),
     ),
+    "shizhai": CalendarType(
+        key="shizhai",
+        name="十斋日",
+        file_name="shizhai.ics",
+        uid_prefix="shizhai",
+        is_observance=_is_shizhai,
+        get_lunar_desc=_make_lunar_description,
+        emoji="🔴",
+        categories=("佛教", "斋日"),
+    ),
 }
 
 
 def get_calendar_type(key: str) -> CalendarType | None:
-    """按 key 获取日历类型。
-
-    Args:
-        key: 日历键名（如 "liuzhai"）。
-
-    Returns:
-        CalendarType 或 None（不存在时）。
-    """
+    """按 key 获取日历类型。"""
     return CALENDAR_REGISTRY.get(key)

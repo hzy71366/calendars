@@ -41,6 +41,11 @@ categories:
 zhai_types:
   liuzhai: true
 
+# --- 日历类型开关 ---
+calendars:
+  liuzhai: true
+  shizhai: true
+
 # --- 年份范围 ---
 years:
   ahead: 10
