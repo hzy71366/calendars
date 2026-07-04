@@ -28,17 +28,17 @@ categories:
 # 每个日历可独立设置提醒
 calendars:
   liuzhai:
-    enabled: false
+    enabled: true
     emoji: "📿"
     alarm:
-      enabled: true
+      enabled: false
       days_before: 0
       time: "06:00"
   shizhai:
-    enabled: false
+    enabled: true
     emoji: "🪷"
     alarm:
-      enabled: true
+      enabled: false
       days_before: 0
       time: "06:00"
 
