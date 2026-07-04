@@ -8,11 +8,6 @@ config_version: 1
 timezone: "Asia/Shanghai"
 language: "zh-CN"
 
-# --- 分类标签 ---
-categories:
-  - "佛教"
-  - "斋日"
-
 # --- 日历类型配置 ---
 calendars:
   liuzhai:
