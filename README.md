@@ -2,8 +2,8 @@
 
 > 自动生成、自动更新的六斋日 ICS 日历，iPhone / Mac / Google Calendar 一键订阅。
 
-[![CI](https://github.com/<USER>/liuzhai-ics/actions/workflows/test.yml/badge.svg)](https://github.com/<USER>/liuzhai-ics/actions/workflows/test.yml)
-[![Publish](https://github.com/<USER>/liuzhai-ics/actions/workflows/publish.yml/badge.svg)](https://github.com/<USER>/liuzhai-ics/actions/workflows/publish.yml)
+[![CI](https://github.com/hzy71366/buddhist-calendars/actions/workflows/test.yml/badge.svg)](https://github.com/hzy71366/buddhist-calendars/actions/workflows/test.yml)
+[![Publish](https://github.com/hzy71366/buddhist-calendars/actions/workflows/publish.yml/badge.svg)](https://github.com/hzy71366/buddhist-calendars/actions/workflows/publish.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg)](pyproject.toml)
 [![Cal](https://img.shields.io/badge/Cal-RFC%205545-green.svg)](https://tools.ietf.org/html/rfc5545)
