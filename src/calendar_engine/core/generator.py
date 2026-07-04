@@ -69,6 +69,8 @@ def _make_event(
 
     # 模板渲染：描述
     desc = config.event_description
+    if isinstance(cal_cfg, dict):
+        desc = cal_cfg.get("description", desc)
     desc = desc.replace("{lunar}", lunar_desc)
     desc = desc.replace("{solar}", solar_str)
 
