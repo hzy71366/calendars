@@ -1,5 +1,5 @@
 # ============================================================
-# 六斋日 ICS 日历 · 用户配置
+# Calendar Engine — 用户配置
 # 修改此文件后，运行以下命令重新生成：
 #   python scripts/generate_ics.py
 # 或等待 GitHub Actions 自动更新。
@@ -17,11 +17,11 @@ language: "zh-CN"
 
 # --- 事件标题模板 ---
 # 可用变量: {emoji} {name} {lunar} {solar}
-event_title: "{emoji} {name} · 农历{lunar}"
+event_title: "{emoji} {name} · {lunar}"
 
 # --- 事件描述模板 ---
 # 可用变量: {lunar} {solar}
-event_description: "农历{lunar}\n六斋日，过午不食，持斋修行，诸恶莫作，众善奉行。"
+event_description: "{lunar}\n六斋日，过午不食，持斋修行，诸恶莫作，众善奉行。"
 
 # --- 提醒设置 ---
 alarm:
