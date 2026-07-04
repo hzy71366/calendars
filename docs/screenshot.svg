@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="300" viewBox="0 0 750 300">
+  <rect width="750" height="300" fill="#f5f5f7"/>
+  <rect x="40" y="30" width="670" height="240" rx="12" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+  <!-- Calendar header -->
+  <rect x="40" y="30" width="670" height="40" rx="12" fill="#1a1a2e"/>
+  <rect x="40" y="58" width="670" height="12" fill="#1a1a2e"/>
+  <text x="375" y="57" text-anchor="middle" fill="white" font-size="16" font-family="system-ui" font-weight="600">六斋日</text>
+  <!-- Event row 1 -->
+  <rect x="60" y="85" width="8" height="40" rx="4" fill="#ff3b30"/>
+  <text x="85" y="110" font-size="14" font-family="system-ui" fill="#1a1a2e" font-weight="500">🔴 六斋日 · 农历冬月十四</text>
+  <text x="580" y="110" font-size="13" font-family="system-ui" fill="#666">全天</text>
+  <!-- Event row 2 -->
+  <rect x="60" y="135" width="8" height="40" rx="4" fill="#ff3b30"/>
+  <text x="85" y="160" font-size="14" font-family="system-ui" fill="#1a1a2e" font-weight="500">🔴 六斋日 · 农历冬月十五</text>
+  <text x="580" y="160" font-size="13" font-family="system-ui" fill="#666">全天</text>
+  <!-- Event row 3 -->
+  <rect x="60" y="185" width="8" height="40" rx="4" fill="#ff3b30"/>
+  <text x="85" y="210" font-size="14" font-family="system-ui" fill="#1a1a2e" font-weight="500">🔴 六斋日 · 农历冬月廿三</text>
+  <text x="580" y="210" font-size="13" font-family="system-ui" fill="#666">全天</text>
+  <!-- Caption -->
+  <text x="375" y="280" text-anchor="middle" font-size="12" font-family="system-ui" fill="#999">iOS 日历 · 六斋日订阅效果</text>
+</svg>
