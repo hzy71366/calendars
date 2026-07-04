@@ -4,10 +4,6 @@
 
 config_version: 1
 
-# --- 全局设置 ---
-timezone: "Asia/Shanghai"
-language: "zh-CN"
-
 # --- 日历类型配置 ---
 calendars:
   liuzhai:
