@@ -123,6 +123,23 @@ class TestICSCompliance:
         for e in events:
             assert e.get('SUMMARY') is not None
 
+    def test_each_event_has_description(self, events):
+        """每个VEVENT必须有DESCRIPTION"""
+        for e in events:
+            desc = e.get('DESCRIPTION')
+            assert desc is not None
+            assert "六斋日" in str(desc)
+
+    def test_description_multiline(self, events):
+        """DESCRIPTION 包含多行文本"""
+        for e in events:
+            desc = str(e.get('DESCRIPTION'))
+            assert '\\n' in desc or '\n' in desc, "DESCRIPTION应为多行"
+
+    def test_calendar_has_calscale(self, calendar):
+        """Calendar 包含 CALSCALE:GREGORIAN"""
+        assert calendar.get('CALSCALE') == 'GREGORIAN'
+
     def test_dtstart_is_date(self, events):
         """DTSTART是全天事件（VALUE=DATE）"""
         for e in events:

@@ -70,6 +70,14 @@ def _make_event(
     event.add("dtstart", solar_date)
     event.add("dtend", solar_date + datetime.timedelta(days=1))
     event.add("summary", f"🔴 六斋日 · {lunar_desc}")
+
+    # DESCRIPTION 包含农历日期 + 说明（多行，RFC 5545 允许 \n）
+    description = (
+        f"{lunar_desc}\n"
+        "六斋日，过午不食，持斋修行，诸恶莫作，众善奉行。"
+    )
+    event.add("description", description)
+
     event.add("dtstamp", datetime.datetime.utcnow())
     return event
 
@@ -122,6 +130,7 @@ def build_liuzhai_calendar(
     cal = Calendar()
     cal.add("prodid", f"-//{calendar_name}//{_UID_DOMAIN}//CN")
     cal.add("version", "2.0")
+    cal.add("calscale", "GREGORIAN")
     cal.add("x-wr-calname", calendar_name)
     cal.add("x-wr-caldesc", calendar_desc)
 
