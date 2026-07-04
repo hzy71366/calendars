@@ -14,8 +14,4 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
-
-# Project output
-docs/*.ics
-!docs/index.html
 *.egg-info/
