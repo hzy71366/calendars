@@ -11,6 +11,9 @@ on:
       - "scripts/**"
     branches: [main]
 
+permissions:
+  contents: write
+
 concurrency:
   group: pages
   cancel-in-progress: true
