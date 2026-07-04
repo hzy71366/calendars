@@ -1,8 +1,5 @@
 # ============================================================
 # Calendar Engine — 用户配置
-# 修改此文件后，运行以下命令重新生成：
-#   python scripts/generate_ics.py
-# 或等待 GitHub Actions 自动更新。
 # ============================================================
 
 config_version: 1
@@ -10,20 +7,13 @@ config_version: 1
 # --- 日历元信息 ---
 calendar_name: "六斋日"
 timezone: "Asia/Shanghai"
-
-# --- 语言 ---
-# zh-CN / en / bilingual
 language: "zh-CN"
 
-# --- 事件标题模板 ---
-# 可用变量: {emoji} {name} {lunar} {solar}
+# --- 事件模板 ---
 event_title: "{emoji} {name} · {lunar}"
-
-# --- 事件描述模板 ---
-# 可用变量: {lunar} {solar}
 event_description: "{lunar}\n六斋日，过午不食，持斋修行，诸恶莫作，众善奉行。"
 
-# --- 提醒设置 ---
+# --- 全局提醒（日历未指定自己的提醒时使用）---
 alarm:
   enabled: true
   days_before: 1
@@ -37,11 +27,8 @@ categories:
   - "佛教"
   - "斋日"
 
-# --- 斋日类型 ---
-zhai_types:
-  liuzhai: true
-
-# --- 日历类型开关 ---
+# --- 日历类型配置 ---
+# 每个日历可独立设置提醒
 calendars:
   liuzhai: true
   shizhai: true

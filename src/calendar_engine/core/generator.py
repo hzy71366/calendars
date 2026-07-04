@@ -8,7 +8,7 @@ hardcoded knowledge of any specific calendar.
 import datetime
 from pathlib import Path
 from icalendar import Calendar, Event, Alarm
-from calendar_engine.core.config import AppConfig
+from calendar_engine.core.config import AppConfig, get_calendar_alarm
 from calendar_engine.core.registry import CALENDAR_REGISTRY, CalendarType
 
 
@@ -68,11 +68,12 @@ def _make_event(
     event.add("description", desc)
     event.add("dtstamp", datetime.datetime.utcnow())
 
-    # VALARM
-    if config.alarm_enabled:
+    # VALARM — 按日历配置（优先于全局）
+    alarm_cfg = get_calendar_alarm(config, cal_type.key)
+    if alarm_cfg["enabled"]:
         alarm = Alarm()
-        trigger_minutes = config.alarm_days_before * 24 * 60
-        hour, minute = (config.alarm_time.split(":") + ["0", "0"])[:2]
+        trigger_minutes = alarm_cfg["days_before"] * 24 * 60
+        hour, minute = (alarm_cfg["time"].split(":") + ["0", "0"])[:2]
         trigger_minutes -= int(hour) * 60 + int(minute)
         alarm.add("trigger", datetime.timedelta(minutes=-trigger_minutes))
         alarm.add("action", "DISPLAY")

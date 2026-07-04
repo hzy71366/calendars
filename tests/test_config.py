@@ -2,7 +2,7 @@
 
 import datetime
 import pytest
-from calendar_engine.core.config import AppConfig, load_config
+from calendar_engine.core.config import AppConfig, load_config, get_calendar_alarm
 
 
 class TestConfigLoading:
@@ -78,3 +78,54 @@ years:
 """
         cfg = load_config(raw)
         assert cfg.calendars.get("liuzhai") is True
+
+    def test_calendar_override_global_alarm(self):
+        """日历独立 alarm 覆盖全局"""
+        raw = """
+alarm:
+  enabled: true
+calendars:
+  liuzhai:
+    alarm:
+      enabled: true
+  shizhai:
+    alarm:
+      enabled: false
+years:
+  ahead: 5
+"""
+        cfg = load_config(raw)
+        lz = get_calendar_alarm(cfg, "liuzhai")
+        sz = get_calendar_alarm(cfg, "shizhai")
+        assert lz["enabled"] is True
+        assert sz["enabled"] is False
+
+    def test_calendar_fallback_global_alarm(self):
+        """日历未指定 alarm 时回退到全局"""
+        raw = """
+alarm:
+  enabled: true
+  days_before: 2
+calendars:
+  liuzhai: true
+years:
+  ahead: 5
+"""
+        cfg = load_config(raw)
+        alarm = get_calendar_alarm(cfg, "liuzhai")
+        assert alarm["enabled"] is True
+        assert alarm["days_before"] == 2
+
+    def test_calendar_bool_true_uses_global_alarm(self):
+        """旧式 calendars[liuzhai]: true 格式使用全局 alarm"""
+        raw = """
+alarm:
+  enabled: true
+calendars:
+  liuzhai: true
+years:
+  ahead: 5
+"""
+        cfg = load_config(raw)
+        alarm = get_calendar_alarm(cfg, "liuzhai")
+        assert alarm["enabled"] is True
