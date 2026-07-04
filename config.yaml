@@ -2,8 +2,6 @@
 # Calendar Engine — 用户配置
 # ============================================================
 
-config_version: 1
-
 # --- 日历类型配置 ---
 calendars:
   liuzhai:
