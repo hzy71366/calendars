@@ -46,7 +46,11 @@ def _make_event(
         RFC 5545 合规的 VEVENT。
     """
     solar_str = solar_date.strftime("%Y-%m-%d")
-    emoji = config.calendars.get(cal_type.key, {}).get("emoji", config.emoji)
+    emoji = config.emoji
+    cal_cfg = config.calendars.get(cal_type.key)
+    if isinstance(cal_cfg, dict):
+        emoji = cal_cfg.get("emoji", emoji)
+    emoji = emoji or "🔴"
 
     # 模板渲染：标题
     title = config.event_title
