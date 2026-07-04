@@ -28,6 +28,14 @@ def _make_uid(
     return f"{uid_prefix}-{date_str}@{_UID_DOMAIN}"
 
 
+def _get_cal_name(config: AppConfig, cal_type: CalendarType) -> str:
+    """获取日历显示名称，优先使用 config，回退到 registry。"""
+    cal_cfg = config.calendars.get(cal_type.key)
+    if isinstance(cal_cfg, dict):
+        return cal_cfg.get("name", cal_type.name)
+    return cal_type.name
+
+
 def _make_event(
     solar_date: datetime.date,
     lunar_desc: str,
@@ -55,7 +63,7 @@ def _make_event(
     # 模板渲染：标题
     title = config.event_title
     title = title.replace("{emoji}", emoji)
-    title = title.replace("{name}", cal_type.name)
+    title = title.replace("{name}", _get_cal_name(config, cal_type))
     title = title.replace("{lunar}", lunar_desc)
     title = title.replace("{solar}", solar_str)
 
@@ -83,7 +91,7 @@ def _make_event(
         alarm.add("action", "DISPLAY")
         alarm.add(
             "description",
-            f"提醒：明天（{lunar_desc}）是{cal_type.name}",
+            f"提醒：明天（{lunar_desc}）是{_get_cal_name(config, cal_type)}",
         )
         event.add_component(alarm)
 
@@ -133,12 +141,13 @@ def build_calendar(
     Returns:
         可序列化的 Calendar 对象。
     """
+    name = _get_cal_name(config, cal_type)
     cal = Calendar()
-    cal.add("prodid", f"-//{cal_type.name}//{_UID_DOMAIN}//CN")
+    cal.add("prodid", f"-//{name}//{_UID_DOMAIN}//CN")
     cal.add("version", "2.0")
     cal.add("calscale", "GREGORIAN")
-    cal.add("x-wr-calname", cal_type.name)
-    cal.add("x-wr-caldesc", f"{cal_type.name}日历 — 自动更新")
+    cal.add("x-wr-calname", name)
+    cal.add("x-wr-caldesc", f"{name}日历 — 自动更新")
 
     for solar_date, lunar_desc in dates:
         event = _make_event(solar_date, lunar_desc, cal_type, config)
