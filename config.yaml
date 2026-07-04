@@ -30,8 +30,18 @@ categories:
 # --- 日历类型配置 ---
 # 每个日历可独立设置提醒
 calendars:
-  liuzhai: true
-  shizhai: true
+  liuzhai:
+    enabled: true
+    alarm:
+      enabled: true
+      days_before: 1
+      time: "09:00"
+  shizhai:
+    enabled: true
+    alarm:
+      enabled: true
+      days_before: 0
+      time: "06:30"
 
 # --- 年份范围 ---
 years:
