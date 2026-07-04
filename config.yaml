@@ -18,7 +18,6 @@ categories:
   - "斋日"
 
 # --- 日历类型配置 ---
-# 每个日历可独立设置提醒
 calendars:
   liuzhai:
     name: "六斋日"
