@@ -53,10 +53,6 @@
 
 > 日历自动更新频率：iOS 约 24h 自动刷新，Google Calendar 约 12h。
 
-### 效果预览
-
-![日历预览](docs/screenshot.png)
-
 ---
 
 ## 自定义配置
