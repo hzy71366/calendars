@@ -1,6 +1,7 @@
-# 🔴 六斋日 ICS 日历
+# 🙏 佛教日历 ICS 订阅
 
-> 自动生成、自动更新的六斋日 ICS 日历，iPhone / Mac / Google Calendar 一键订阅。
+> 自动生成、自动更新的佛教日历 ICS 订阅，iPhone / Mac / Google Calendar 一键订阅。
+> 包含六斋日、十斋日、佛菩萨圣诞（26 个节日）三个日历。
 
 [![CI](https://github.com/hzy71366/buddhist-calendars/actions/workflows/test.yml/badge.svg)](https://github.com/hzy71366/buddhist-calendars/actions/workflows/test.yml)
 [![Publish](https://github.com/hzy71366/buddhist-calendars/actions/workflows/publish.yml/badge.svg)](https://github.com/hzy71366/buddhist-calendars/actions/workflows/publish.yml)
@@ -26,11 +27,11 @@
 
 ## 快速订阅
 
-> 将以下链接（替换 `<USER>` 为你自己的 GitHub 用户名）添加到你的日历 App。
-
-```
-https://<USER>.github.io/liuzhai-ics/liuzhai.ics
-```
+| 日历 | 订阅链接 |
+|:----|:---------|
+| 📿 **六斋日** | `https://hzy71366.github.io/buddhist-calendars/liuzhai.ics` |
+| 🪷 **十斋日** | `https://hzy71366.github.io/buddhist-calendars/shizhai.ics` |
+| 🙏 **佛菩萨圣诞** | `https://hzy71366.github.io/buddhist-calendars/buddhist.ics` |
 
 ### iPhone / iPad
 
@@ -178,10 +179,10 @@ ICS 文件包含 VALARM 提醒组件，各客户端支持情况：
 
 - [x] v1.0.0 — 六斋日 ICS 生成 + GitHub Pages 自动发布
 - [x] 用户配置系统（config.yaml + 模板变量）
-- [x] VALARM 提醒（实验功能）
-- [ ] v1.1.0 — 十斋日支持
-- [ ] v1.2.0 — 双语标题（中文/英文）
-- [ ] v2.0.0 — 佛教节日合集（佛菩萨圣诞、观音斋等）
+- [x] VALARM 提醒
+- [x] 十斋日支持
+- [x] 佛菩萨圣诞（26 个节日）
+- [ ] 双语标题（中文/英文）
 
 ---
 

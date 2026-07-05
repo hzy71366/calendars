@@ -3,27 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>六斋日 ICS 日历</title>
+<title>佛教日历 ICS 订阅</title>
 <style>
   body { font-family: -apple-system, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #1a1a2e; }
   h1 { font-size: 28px; margin-bottom: 8px; }
   p { color: #555; }
   code { background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-size: 14px; word-break: break-all; }
-  .url-box { background: #f5f5f7; border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; margin: 20px 0; }
-  .url-box code { font-size: 16px; background: none; }
-  .btn { display: inline-block; background: #1a1a2e; color: white; text-decoration: none; padding: 8px 20px; border-radius: 6px; font-size: 14px; margin-top: 10px; }
+  .cal-card { background: #f5f5f7; border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; margin: 16px 0; }
+  .cal-card h3 { margin: 0 0 8px 0; }
+  .cal-card code { font-size: 15px; background: none; }
+  .btn { display: inline-block; background: #1a1a2e; color: white; text-decoration: none; padding: 8px 20px; border-radius: 6px; font-size: 14px; margin-top: 8px; }
+  .btn:hover { background: #2d2d4a; }
   hr { border: none; border-top: 1px solid #e0e0e0; margin: 30px 0; }
 </style>
 </head>
 <body>
 
-<h1>🔴 六斋日</h1>
-<p>自动更新、可订阅的六斋日 ICS 日历。</p>
+<h1>🙏 佛教日历 ICS 订阅</h1>
+<p>自动更新，iPhone / Mac / Google Calendar 一键订阅。</p>
 
-<div class="url-box">
-  <strong>订阅链接</strong><br>
-  <code>https://&lt;你的用户名&gt;.github.io/liuzhai-ics/liuzhai.ics</code><br>
-  <a class="btn" href="liuzhai.ics">📥 下载 liuzhai.ics</a>
+<div class="cal-card">
+  <h3>📿 六斋日</h3>
+  <code>https://hzy71366.github.io/buddhist-calendars/liuzhai.ics</code><br>
+  <a class="btn" href="liuzhai.ics">📥 订阅</a>
+</div>
+
+<div class="cal-card">
+  <h3>🪷 十斋日</h3>
+  <code>https://hzy71366.github.io/buddhist-calendars/shizhai.ics</code><br>
+  <a class="btn" href="shizhai.ics">📥 订阅</a>
+</div>
+
+<div class="cal-card">
+  <h3>🙏 佛菩萨圣诞（26 个节日）</h3>
+  <code>https://hzy71366.github.io/buddhist-calendars/buddhist.ics</code><br>
+  <a class="btn" href="buddhist.ics">📥 订阅</a>
 </div>
 
 <hr>
@@ -31,19 +45,19 @@
 <h2>如何订阅</h2>
 
 <h3>iPhone / iPad</h3>
-<p>设置 → 日历 → 账户 → 添加订阅日历 → 输入上方 URL</p>
+<p>设置 → 日历 → 账户 → 添加订阅日历 → 输入上方链接</p>
 
 <h3>Mac</h3>
-<p>日历 App → 文件 → 新建日历订阅 → 输入 URL</p>
+<p>日历 App → 文件 → 新建日历订阅 → 输入链接</p>
 
 <h3>Google Calendar</h3>
-<p>其他日历 → 通过网址添加 → 输入 URL</p>
+<p>其他日历 → 通过网址添加 → 输入链接</p>
 
 <hr>
 
 <h2>自定义</h2>
 <p>Fork <a href="https://github.com/hzy71366/buddhist-calendars">GitHub 仓库</a>，编辑 <code>config.yaml</code>，
-修改标题、提醒时间、语言等。GitHub Actions 自动重新生成。</p>
+修改标题、提醒时间等。GitHub Actions 自动重新生成。</p>
 
 <hr>
 
