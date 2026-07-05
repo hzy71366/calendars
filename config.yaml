@@ -7,7 +7,7 @@ calendars:
     emoji: "📿"
     alarm:
       enabled: true
-      days_before: 0
+      days_before: 1
       time: "06:00"
   shizhai:
     name: "十斋日"
@@ -16,7 +16,7 @@ calendars:
     emoji: "🪷"
     alarm:
       enabled: true
-      days_before: 0
+      days_before: 1
       time: "06:00"
   buddhist:
     name: "佛菩萨圣诞"
@@ -25,7 +25,7 @@ calendars:
     emoji: "🙏"
     alarm:
       enabled: true
-      days_before: 0
+      days_before: 1
       time: "06:00"
 
 # --- 年份范围 ---
