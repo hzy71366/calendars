@@ -8,7 +8,7 @@ calendars:
     alarm:
       enabled: true
       days_before: 1
-      time: "06:00"
+      time: "18:00"
   shizhai:
     name: "十斋日"
     description: ""
@@ -17,7 +17,7 @@ calendars:
     alarm:
       enabled: true
       days_before: 1
-      time: "06:00"
+      time: "18:00"
   buddhist:
     name: "佛菩萨圣诞"
     description: ""
@@ -26,7 +26,7 @@ calendars:
     alarm:
       enabled: true
       days_before: 1
-      time: "06:00"
+      time: "18:00"
 
 # --- 年份范围 ---
 years:
