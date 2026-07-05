@@ -93,7 +93,8 @@ def _make_event(
         alarm.add("action", "DISPLAY")
         alarm.add(
             "description",
-            f"提醒：{lunar_desc}",
+            config.alarm_text.replace("{lunar}", lunar_desc)
+                           .replace("{name}", _get_cal_name(config, cal_type)),
         )
         event.add_component(alarm)
 

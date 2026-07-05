@@ -11,6 +11,7 @@ import yaml
 
 _DEFAULT_TITLE = "{emoji} {name} · {lunar}"
 _DEFAULT_DESC = "{lunar}\n六斋日，过午不食，持斋修行，诸恶莫作，众善奉行。"
+_DEFAULT_ALARM_TEXT = "提醒：{lunar}"
 
 
 @dataclasses.dataclass
@@ -28,6 +29,7 @@ class AppConfig:
     alarm_enabled: bool = True
     alarm_days_before: int = 1
     alarm_time: str = "09:00"
+    alarm_text: str = _DEFAULT_ALARM_TEXT
 
     emoji: str = "🔴"
     categories: tuple[str, ...] = ("佛教", "斋日")
@@ -75,6 +77,7 @@ def load_config(yaml_text: str) -> AppConfig:
     kwargs["alarm_enabled"] = alarm.get("enabled", True)
     kwargs["alarm_days_before"] = alarm.get("days_before", 1)
     kwargs["alarm_time"] = alarm.get("time", "09:00")
+    kwargs["alarm_text"] = alarm.get("text", _DEFAULT_ALARM_TEXT)
 
     # 分类
     cats = raw.get("categories", ("佛教", "斋日"))
