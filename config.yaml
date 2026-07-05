@@ -24,7 +24,7 @@ calendars:
     enabled: true
     emoji: "🙏"
     alarm:
-      enabled: false
+      enabled: true
       days_before: 0
       time: "06:00"
 
