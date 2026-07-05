@@ -1,0 +1,30 @@
+name: 发布 Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 生成 ICS 文件
+        run: python scripts/generate_ics.py
+
+      - name: 上传全部 ICS 附件
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for f in docs/*.ics; do
+            echo "上传: $f"
+            gh release upload "${{ github.event.release.tag_name }}" "$f" --repo "${{ github.repository }}" --clobber
+          done
