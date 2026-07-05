@@ -93,7 +93,7 @@ def _make_event(
         alarm.add("action", "DISPLAY")
         alarm.add(
             "description",
-            f"提醒：明天（{lunar_desc}）是{_get_cal_name(config, cal_type)}",
+            f"提醒：{lunar_desc}",
         )
         event.add_component(alarm)
 
