@@ -17,10 +17,8 @@
 - [自定义配置](#自定义配置)
 - [本地运行](#本地运行)
 - [项目结构](#项目结构)
-- [验证](#验证)
 - [提醒功能说明](#提醒功能说明)
 - [路线图](#路线图)
-- [贡献](#贡献)
 - [许可证](#许可证)
 
 ---
@@ -94,8 +92,8 @@
 
 ```bash
 # 克隆
-git clone https://github.com/<USER>/liuzhai-ics.git
-cd liuzhai-ics
+git clone https://github.com/hzy71366/buddhist-calendars.git
+cd buddhist-calendars
 
 # 安装
 pip install -r requirements.txt
@@ -113,61 +111,45 @@ python -m pytest
 ## 项目结构
 
 ```
-liuzhai-ics/
+buddhist-calendars/
 ├── .github/workflows/
 │   ├── test.yml              ← CI 测试
-│   └── publish.yml           ← 自动生成 + 发布到 Pages
-├── src/liuzhai_ics/          ← Python 包
-│   ├── zhai_types.py         ← 六斋日判定
-│   ├── generator.py          ← ICS 生成器
-│   └── config.py             ← 配置加载 + 模板
-├── scripts/generate_ics.py   ← 入口脚本
-├── tests/                    ← 53 个测试用例
+│   ├── publish.yml           ← 自动生成 + 发布到 Pages
+│   └── release.yml           ← Release 自动上传附件
+├── src/calendar_engine/
+│   ├── core/
+│   │   ├── config.py         ← 配置加载 + 模板
+│   │   ├── generator.py      ← ICS 生成器
+│   │   ├── registry.py       ← 日历注册表
+│   │   └── types.py          ← 日历类型定义
+│   ├── calendars/
+│   │   ├── liuzhai.py        ← 六斋日判定
+│   │   ├── shizhai.py        ← 十斋日判定
+│   │   ├── buddhist.py       ← 佛菩萨圣诞判定
+│   │   └── solar_terms.py    ← 节气
+│   └── utils/
+├── scripts/
+│   └── generate_ics.py       ← 入口脚本
+├── tests/                    ← 测试用例
 ├── config.yaml               ← 用户配置
 ├── docs/
-│   ├── liuzhai.ics           ← 生成的日历文件（订阅此文件）
-│   ├── screenshot.png        ← 效果截图
-│   └── VERIFY.md             ← 验证指南
-├── DESIGN.md                 ← 设计文档
-├── RELEASE.md                ← 发布说明
-├── CONTRIBUTING.md           ← 贡献指南
-├── SECURITY.md               ← 安全策略
-├── CHANGELOG.md              ← 版本历史
+│   ├── index.html            ← Pages 首页
+│   ├── liuzhai.ics           ← 六斋日（订阅此文件）
+│   ├── shizhai.ics           ← 十斋日（订阅此文件）
+│   ├── buddhist.ics          ← 佛菩萨圣诞（订阅此文件）
+│   └── .nojekyll
 ├── README.md
-└── LICENSE
+├── LICENSE
+├── pyproject.toml
+└── requirements.txt
 ```
 
 ---
 
-## 验证
-
-完整的 Apple Calendar 验证清单请见 [docs/VERIFY.md](docs/VERIFY.md)。
-
-验证内容：
-
-- [x] ICS 文件符合 RFC 5545 标准
-- [x] UID 稳定（同日期永不改变）
-- [x] Round-trip 序列化/反序列化正确
-- [x] 每个农历月恰好 6 个斋日
-- [ ] ~~Apple Calendar 真机显示效果~~（待人工验证）
-
----
 
 ## 提醒功能说明
 
-ICS 文件包含 VALARM 提醒组件，各客户端支持情况：
-
-| 客户端 | 提醒支持 | 说明 |
-|:------|:-------:|:-----|
-| Apple Calendar (iOS/macOS) | ✅ 支持 | 全天事件提醒正常触发 |
-| Google Calendar | ⚠️ 部分支持 | 订阅日历提醒可能不触发 |
-| Microsoft Outlook | ⚠️ 部分支持 | 依赖客户端版本 |
-
-> VALARM 为实验功能。不需要提醒可在 `config.yaml` 中关闭：
-> ```yaml
-> alarm:
->   enabled: false
-> ```
+ICS 文件包含 VALARM 提醒组件。日历订阅客户端对 VALARM 的支持因实现而异。
 
 ---
 
@@ -179,16 +161,6 @@ ICS 文件包含 VALARM 提醒组件，各客户端支持情况：
 - [x] 十斋日支持
 - [x] 佛菩萨圣诞（26 个节日）
 - [ ] 双语标题（中文/英文）
-
----
-
-## 贡献
-
-欢迎贡献！请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
-
-### 安全
-
-发现安全漏洞？请参考 [SECURITY.md](SECURITY.md) 的处理流程。
 
 ---
 
