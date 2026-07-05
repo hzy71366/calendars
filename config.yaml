@@ -18,6 +18,15 @@ calendars:
       enabled: true
       days_before: 0
       time: "06:00"
+  buddhist:
+    name: "佛菩萨圣诞"
+    description: ""
+    enabled: true
+    emoji: "🙏"
+    alarm:
+      enabled: false
+      days_before: 0
+      time: "06:00"
 
 # --- 年份范围 ---
 years:
