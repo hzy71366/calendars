@@ -191,8 +191,10 @@ def generate_all(
         cal = build_calendar(cal_type, dates, config)
 
         file_path = output_path / cal_type.file_name
+        raw_bytes = cal.to_ical()
+        raw_bytes = raw_bytes.replace(b'\\n', b'\\N')  # RFC 5545: \N not \n  # 0x5C 0x6E -> 0x5C 0x4E
         with open(file_path, "wb") as f:
-            f.write(cal.to_ical())
+            f.write(raw_bytes)
 
         generated.append(file_path)
         event_count = len(dates)

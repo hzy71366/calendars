@@ -1,8 +1,19 @@
-# --- 日历配置 ---
 calendars:
   liuzhai:
     name: "六斋日"
-    description: ""
+    description: |
+      📅 【佛教修持日】
+
+      🪷 今日功德：亿倍增长
+
+      🥗 饮食建议：全素 / 蛋奶素
+
+      📿 定课建议：念佛/持咒 108遍
+
+      🙏 特别回向：法界众生，离苦得乐
+
+      ❌ 忌：杀生、偷盗、邪淫、妄语、饮酒
+
     enabled: true
     emoji: "📿"
     alarm:
@@ -11,7 +22,20 @@ calendars:
       time: "06:00"
   shizhai:
     name: "十斋日"
-    description: ""
+    description: |
+      📅 【佛教修持日】
+
+      🪷 今日功德：千万倍增长
+
+      🥗 饮食建议：全素 / 蛋奶素
+
+      📿 定课建议：念佛/持咒 108遍
+
+      🙏 特别回向：法界众生，离苦得乐
+
+      ❌ 忌：杀生、偷盗、邪淫、妄语、饮酒
+
+    enabled: true
     emoji: "🪷"
     alarm:
       enabled: true
@@ -24,9 +48,7 @@ calendars:
     emoji: "🙏"
     alarm:
       enabled: true
-      days_before: 0
-      time: "06:00"
-
-# --- 年份范围 ---
+      days_before: 1
+      time: "18:00"
 years:
   ahead: 10
