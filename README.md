@@ -3,8 +3,8 @@
 > 自动生成、自动更新的佛教日历 ICS 订阅，iPhone / Mac / Google Calendar 一键订阅。
 > 包含六斋日、十斋日、佛菩萨圣诞（26 个节日）三个日历。
 
-[![CI](https://github.com/hzy71366/buddhist-calendars/actions/workflows/test.yml/badge.svg)](https://github.com/hzy71366/buddhist-calendars/actions/workflows/test.yml)
-[![Publish](https://github.com/hzy71366/buddhist-calendars/actions/workflows/publish.yml/badge.svg)](https://github.com/hzy71366/buddhist-calendars/actions/workflows/publish.yml)
+[![CI](https://github.com/hzy71366/calendars/actions/workflows/test.yml/badge.svg)](https://github.com/hzy71366/calendars/actions/workflows/test.yml)
+[![Publish](https://github.com/hzy71366/calendars/actions/workflows/publish.yml/badge.svg)](https://github.com/hzy71366/calendars/actions/workflows/publish.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg)](pyproject.toml)
 [![Cal](https://img.shields.io/badge/Cal-RFC%205545-green.svg)](https://tools.ietf.org/html/rfc5545)
@@ -27,9 +27,9 @@
 
 | 日历 | 订阅链接 |
 |:----|:---------|
-| 📿 **六斋日** | `https://hzy71366.github.io/buddhist-calendars/liuzhai.ics` |
-| 🪷 **十斋日** | `https://hzy71366.github.io/buddhist-calendars/shizhai.ics` |
-| 🙏 **佛菩萨圣诞** | `https://hzy71366.github.io/buddhist-calendars/buddhist.ics` |
+| 📿 **六斋日** | `https://hzy71366.github.io/calendars/liuzhai.ics` |
+| 🪷 **十斋日** | `https://hzy71366.github.io/calendars/shizhai.ics` |
+| 🙏 **佛菩萨圣诞** | `https://hzy71366.github.io/calendars/buddhist.ics` |
 
 ### iPhone / iPad
 
@@ -92,8 +92,8 @@
 
 ```bash
 # 克隆
-git clone https://github.com/hzy71366/buddhist-calendars.git
-cd buddhist-calendars
+git clone https://github.com/hzy71366/calendars.git
+cd calendars
 
 # 安装
 pip install -r requirements.txt
@@ -111,7 +111,7 @@ python -m pytest
 ## 项目结构
 
 ```
-buddhist-calendars/
+calendars/
 ├── .github/workflows/
 │   ├── test.yml              ← CI 测试
 │   ├── publish.yml           ← 自动生成 + 发布到 Pages
