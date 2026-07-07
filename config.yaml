@@ -31,7 +31,6 @@ calendars:
       time: "06:00"
   buddhist:
     name: "佛菩萨圣诞"
-    description: ""
     enabled: true
     emoji: "🙏"
     alarm:
